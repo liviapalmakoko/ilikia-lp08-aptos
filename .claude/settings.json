@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat)",
+      "Bash(node -e \"const h=require\\('fs'\\).readFileSync\\('index.html','utf8'\\);const o=\\(h.match\\(/<div/g\\)||[]\\).length,c=\\(h.match\\(/<\\\\/div>/g\\)||[]\\).length;console.log\\('divs open/close:',o,c\\);console.log\\('bytes:',h.length\\)\")",
+      "Bash(python3 -)"
+    ]
+  }
+}
