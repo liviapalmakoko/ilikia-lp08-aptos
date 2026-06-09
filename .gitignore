@@ -2,3 +2,5 @@
 *.log
 node_modules/
 briefing/ref-página-hoje_files/
+*.psd
+assets/videos/Pr/
