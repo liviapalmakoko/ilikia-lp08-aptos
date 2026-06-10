@@ -253,36 +253,52 @@ h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing
 .stat .lab{font-size:13.5px;color:var(--ink-soft);margin-top:8px;font-weight:500}
 .synergy-section{background:linear-gradient(180deg,var(--aptos-offwhite),rgba(188,222,255,.5));overflow:hidden}
 .synergy-layout{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
-.synergy-stage{position:relative;min-height:560px;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(0,125,255,.18);background:linear-gradient(135deg,rgba(244,244,244,.96),rgba(188,222,255,.42));box-shadow:var(--shadow);padding:42px}
-.journey-line{position:absolute;left:90px;right:90px;top:48%;height:3px;background:linear-gradient(90deg,var(--aptos-blue),var(--aptos-magenta));border-radius:999px;opacity:.42}
-.journey-line::before{content:"";position:absolute;inset:-10px;background:linear-gradient(90deg,rgba(0,125,255,.18),rgba(243,148,163,.2));filter:blur(10px)}
-.journey-steps{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:center;margin-top:48px}
+.synergy-stage{position:relative;min-height:0;overflow:visible;padding:0}
+.journey-line{display:none}
+.journey-timeline{
+  position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:28px;align-items:start;margin:42px 0 26px;
+}
+.journey-timeline::before{
+  content:"";position:absolute;left:calc(16.666% + 21px);right:calc(16.666% + 21px);top:21px;height:2px;
+  background:linear-gradient(90deg,rgba(0,125,255,.45),rgba(243,148,163,.45));border-radius:999px;
+}
+.journey-track-step{position:relative;z-index:1;display:grid;justify-items:center;text-align:center}
+.journey-track-dot{
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:var(--aptos-offwhite);border:2px solid rgba(0,125,255,.28);
+  color:var(--aptos-blue);font-size:14px;font-weight:900;box-shadow:0 0 0 8px rgba(244,244,244,.9);
+}
+.journey-track-step:nth-child(3) .journey-track-dot{border-color:rgba(243,148,163,.45);color:var(--aptos-magenta)}
+.journey-steps{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch}
 .journey-card{
-  position:relative;min-height:318px;border-radius:var(--radius);padding:30px 26px;background:rgba(244,244,244,.86);
+  position:relative;border-radius:var(--radius);padding:30px 26px;background:rgba(244,244,244,.86);
   border:1px solid rgba(0,125,255,.14);box-shadow:var(--shadow-soft);display:flex;flex-direction:column;justify-content:flex-start;
   transition:transform .35s ease,box-shadow .35s ease;
 }
-.journey-card:nth-child(2){transform:translateY(-26px);background:rgba(188,222,255,.7)}
-.journey-card:nth-child(3){transform:translateY(22px);background:rgba(248,197,205,.55)}
+.journey-card:nth-child(2){background:rgba(188,222,255,.7)}
+.journey-card:nth-child(3){background:rgba(248,197,205,.55)}
 .journey-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
-.journey-card:nth-child(2):hover{transform:translateY(-34px)}
-.journey-card:nth-child(3):hover{transform:translateY(14px)}
-.journey-card:not(:last-child)::after{content:"";position:absolute;right:-22px;top:50%;width:22px;height:2px;background:rgba(0,125,255,.25)}
+.journey-card:nth-child(2):hover,.journey-card:nth-child(3):hover{transform:translateY(-8px)}
+.journey-card:not(:last-child)::after{display:none}
 .journey-step-head{display:flex;align-items:center;gap:11px}
 .journey-kicker{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--aptos-blue)}
-.journey-card h3{font-size:24px;color:var(--aptos-blue);margin-top:24px}
+.journey-card h3{font-size:24px;color:var(--aptos-blue);margin-top:0}
 .journey-card p{font-size:15px;color:var(--text-dark);margin-top:12px}
+.journey-key{
+  display:inline-flex;align-self:flex-start;margin-top:22px;padding:8px 12px;border-radius:999px;
+  background:rgba(0,125,255,.08);border:1px solid rgba(0,125,255,.16);
+  color:var(--aptos-blue);font-size:12px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;
+}
+.journey-card:nth-child(3) .journey-key{
+  background:rgba(244,244,244,.62);border-color:rgba(243,148,163,.32);color:var(--aptos-magenta);
+}
 .journey-dot{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--aptos-blue);color:var(--aptos-offwhite);font-weight:900;font-size:15px;box-shadow:0 0 0 8px rgba(0,125,255,.12)}
 .journey-card:nth-child(3) .journey-dot{background:var(--aptos-magenta);box-shadow:0 0 0 10px rgba(243,148,163,.16)}
-.journey-badge{
-  position:absolute;right:30px;top:28px;z-index:3;display:inline-flex;align-items:center;gap:8px;
-  background:var(--aptos-blue);color:var(--aptos-offwhite);border-radius:999px;padding:10px 16px;font-weight:900;font-size:13px;
-  box-shadow:var(--shadow-soft)
-}
 .journey-support{position:relative;z-index:2;margin:34px auto 0;max-width:760px;text-align:center;color:var(--text-dark);font-size:18px;font-weight:400}
 .synergy-copy-main{text-align:center;max-width:860px;margin:0 auto}
 .synergy-copy-main h2{font-family:var(--font);font-size:clamp(36px,4.4vw,58px);color:var(--aptos-blue);margin:14px 0 0}
-.synergy-copy-main p{font-size:18px;color:var(--text-dark);font-weight:400}
+.synergy-copy-main p{font-size:18px;color:var(--text-dark);font-weight:400;margin:18px auto 0;max-width:760px}
 .synergy-points{list-style:none;display:grid;grid-template-columns:1fr;gap:12px;margin-top:26px}
 .synergy-points li{display:flex;align-items:flex-start;gap:14px;padding:18px 18px;border-radius:var(--radius-sm);border:1px solid rgba(0,125,255,.16);background:rgba(244,244,244,.66);color:var(--text-dark);font-weight:600;box-shadow:var(--shadow-soft)}
 .synergy-points li::before{content:attr(data-step);flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--aptos-blue);color:var(--aptos-offwhite);font-size:13px;font-weight:900}
@@ -483,6 +499,8 @@ h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing
   }
   .dna,.results,.contact-grid{grid-template-columns:1fr;gap:36px}
   .line-showcase,.proof .wrap,.synergy-layout{grid-template-columns:1fr;gap:32px}
+  .journey-timeline{grid-template-columns:repeat(3,1fr);gap:14px;margin:36px 0 20px}
+  .journey-timeline::before{left:calc(16.666% + 21px);right:calc(16.666% + 21px);top:21px;bottom:auto;width:auto;height:2px}
   .journey-steps{grid-template-columns:1fr;gap:16px}
   .journey-card,.journey-card:nth-child(2),.journey-card:nth-child(3){min-height:auto;transform:none}
   .journey-card:hover,.journey-card:nth-child(2):hover,.journey-card:nth-child(3):hover{transform:translateY(-5px)}
@@ -516,8 +534,7 @@ h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing
   .footer-top{grid-template-columns:1fr}
   .row2{grid-template-columns:1fr}
   .dna-stats{grid-template-columns:1fr}
-  .synergy-stage{min-height:360px}
-  .synergy-stage{padding:22px}
+  .synergy-stage{min-height:0;padding:0}
   .synergy-bubble{width:150px;height:150px;font-size:30px}
   .synergy-intersection{width:116px;height:116px;font-size:12px}
   .line-product{min-height:auto}
@@ -599,37 +616,38 @@ h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing
     <div class="synergy-copy-main reveal">
       <span class="eyebrow">Jornada do resultado</span>
       <h2>Do bioestímulo à <span class="grad-text">melhora contínua</span> da pele</h2>
+      <p>A composição 75% PLLA e 25% PCL é a base técnica dessa evolução:</p>
     </div>
     <div class="synergy-stage journey-stage reveal d1" aria-hidden="true">
       <div class="journey-line"></div>
-      <div class="journey-badge">75% PLLA + 25% PCL</div>
+      <div class="journey-timeline" aria-label="Etapas da jornada do resultado">
+        <div class="journey-track-step">
+          <span class="journey-track-dot">01</span>
+        </div>
+        <div class="journey-track-step">
+          <span class="journey-track-dot">02</span>
+        </div>
+        <div class="journey-track-step">
+          <span class="journey-track-dot">03</span>
+        </div>
+      </div>
       <div class="journey-steps">
         <article class="journey-card">
-          <div class="journey-step-head">
-            <span class="journey-dot">01</span>
-            <span class="journey-kicker">Etapa 01</span>
-          </div>
           <h3>Sustentação</h3>
           <p>O fio reposiciona e sustenta os tecidos com efeito lifting imediato e estrutura mecânica real.</p>
+          <span class="journey-key">Efeito imediato</span>
         </article>
         <article class="journey-card">
-          <div class="journey-step-head">
-            <span class="journey-dot">02</span>
-            <span class="journey-kicker">Etapa 02</span>
-          </div>
           <h3>Bioestímulo</h3>
           <p>A bioestimulação favorece a produção de colágeno e apoia a durabilidade do resultado.</p>
+          <span class="journey-key">PLLA + PCL em ação</span>
         </article>
         <article class="journey-card">
-          <div class="journey-step-head">
-            <span class="journey-dot">03</span>
-            <span class="journey-kicker">Etapa 03</span>
-          </div>
           <h3>Evolução</h3>
           <p>A qualidade da pele evolui com naturalidade ao longo do tempo, em melhora progressiva.</p>
+          <span class="journey-key">Melhora progressiva</span>
         </article>
       </div>
-      <p class="journey-support">A composição 75% PLLA e 25% PCL aparece como base técnica, enquanto a jornada explica o que essa sinergia entrega na prática clínica.</p>
     </div>
   </div>
 </section>
