@@ -384,6 +384,7 @@ h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing
 .ba-cell{position:absolute;inset:0;opacity:0;transition:opacity .35s ease}
 .ba-cell.active{opacity:1}
 .ba-cell img{width:100%;height:100%;object-fit:cover}
+.ba-cell img.result-png{object-fit:cover}
 .ba-cell .tag{display:none}
 .ba-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px;background:var(--aptos-offwhite)}
 .ba-tab{border:1px solid var(--line);background:var(--aptos-offwhite);color:var(--aptos-blue);border-radius:999px;padding:10px 12px;font-family:inherit;font-weight:800;cursor:pointer}
@@ -603,9 +604,7 @@ h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing
       </div>
     </div>
     <div class="dna-figure reveal d1">
-      <video autoplay muted loop playsinline preload="metadata" poster="assets/images/persona.png" aria-label="Persona APTOS">
-        <source src="assets/videos/persona.mp4" type="video/mp4" />
-      </video>
+      <img src="assets/images/persona.png" alt="Persona APTOS" />
     </div>
   </div>
 </section>
@@ -731,7 +730,7 @@ h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing
         <div class="ba-stage">
           <div class="ba-cell active" data-ba-panel="antes"><span class="tag">Antes</span><img src="assets/images/ba-antes.jpg" alt="Antes" onerror="this.style.display='none'"></div>
           <div class="ba-cell" data-ba-panel="depois"><span class="tag">Depois</span><img src="assets/images/ba-depois.jpg" alt="Depois" onerror="this.style.display='none'"></div>
-          <div class="ba-cell" data-ba-panel="30dias"><span class="tag">30 dias</span><img src="assets/images/ba-30dias.jpg" alt="30 dias depois" onerror="this.style.display='none'"></div>
+          <div class="ba-cell" data-ba-panel="30dias"><span class="tag">30 dias</span><img class="result-png" src="assets/images/ba-30dias.png" alt="30 dias depois" onerror="this.style.display='none'"></div>
         </div>
         <div class="ba-tabs" aria-label="Comparativo de resultados">
           <button class="ba-tab active" type="button" data-ba-target="antes">Antes</button>
