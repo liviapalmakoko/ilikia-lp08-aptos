@@ -7,7 +7,8 @@
 <meta name="description" content="A nova era da regeneração com fios de reposicionamento, tração e bioestímulo. Lifting de Colágeno & Linhas de Colágeno. Seja certificado APTOS." />
 <meta name="theme-color" content="#f4f4f4" />
 <link rel="canonical" href="https://aptos.koko.ag/" />
-<link rel="icon" type="image/png" href="assets/images/logo_aptos.png" />
+<link rel="icon" href="assets/images/logo_aptos.png" />
+<link rel="apple-touch-icon" href="assets/images/logo_aptos.png" />
 
 <!-- ===== Open Graph ===== -->
 <meta property="og:type" content="website" />
@@ -17,7 +18,13 @@
 <meta property="og:image" content="https://aptos.koko.ag/assets/images/og-aptos.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:locale" content="pt_BR" />
+
+<!-- ===== Twitter ===== -->
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="APTOS — Threads Lifting Method" />
+<meta name="twitter:description" content="A nova era da regeneração com fios de reposicionamento, tração e bioestímulo." />
+<meta name="twitter:image" content="https://aptos.koko.ag/assets/images/og-aptos.jpg" />
 
 <!-- ===== Fonts ===== -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -109,7 +116,7 @@ a{color:inherit;text-decoration:none}
 .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
 /* ---- tipografia utilitária ---- */
-h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing:0;color:var(--aptos-blue)}
+h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing:0;color:var(--text-dark)}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
@@ -122,7 +129,6 @@ h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing
   font-weight:800;
   font-style:italic;
 }
-.hero h1 em.grad-text{font-family:var(--font);font-weight:700;font-style:normal}
 
 /* ---- botões ---- */
 .btn{
@@ -132,17 +138,17 @@ h1,h2,h3{font-family:var(--font);line-height:1.08;font-weight:800;letter-spacing
   transition:transform .25s ease,box-shadow .25s ease,opacity .25s ease;
   white-space:nowrap;
 }
-a,button{touch-action:manipulation}
-.btn:focus-visible,.product-tab:focus-visible,.ba-tab:focus-visible,.nav-toggle:focus-visible,.nav-links a:focus-visible{
-  outline:3px solid rgba(0,125,255,.6);outline-offset:3px;
-}
-.rose-band .btn:focus-visible,.blue-band .btn:focus-visible,.proof .btn:focus-visible{outline-color:rgba(244,244,244,.85)}
 .btn-primary{background:var(--aptos-blue);color:var(--aptos-offwhite);box-shadow:0 12px 30px -10px rgba(0,125,255,.38)}
 .btn-primary:hover{background:var(--aptos-offwhite);color:var(--aptos-blue);transform:translateY(-2px);box-shadow:0 18px 38px -10px rgba(243,148,163,.42)}
 .btn-ghost{background:rgba(244,244,244,.08);color:var(--aptos-offwhite);border:1px solid rgba(244,244,244,.35)}
 .btn-ghost:hover{background:rgba(244,244,244,.16)}
 .btn-outline{background:transparent;color:var(--aptos-blue-deep);border:1.5px solid var(--aptos-blue)}
 .btn-outline:hover{background:var(--aptos-blue);color:var(--aptos-offwhite)}
+
+/* ---- foco acessível (teclado) ---- */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.btn:focus-visible{
+  outline:3px solid var(--aptos-blue);outline-offset:2px;border-radius:6px;
+}
 
 /* ============================================================
    NAV
@@ -186,9 +192,8 @@ a,button{touch-action:manipulation}
 .hero-bg{
   position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    linear-gradient(90deg,rgba(244,244,244,.98) 0%,rgba(244,244,244,.92) 34%,rgba(244,244,244,.62) 58%,rgba(244,244,244,.18) 78%,rgba(244,244,244,0) 100%),
-    radial-gradient(620px 520px at 7% 82%,rgba(188,222,255,.28),transparent 68%),
-    radial-gradient(680px 520px at 88% 12%,rgba(248,197,205,.22),transparent 62%);
+    linear-gradient(90deg,rgba(244,244,244,.97) 0%,rgba(244,244,244,.88) 32%,rgba(244,244,244,.42) 54%,rgba(244,244,244,.06) 76%,rgba(244,244,244,0) 100%),
+    radial-gradient(620px 520px at 7% 82%,rgba(188,222,255,.26),transparent 68%);
 }
 .hero-video{
   position:absolute;inset:0;z-index:0;width:100%;height:100%;
@@ -196,8 +201,8 @@ a,button{touch-action:manipulation}
 }
 .hero .wrap{position:relative;z-index:2}
 .hero-copy{max-width:640px}
-.hero h1{font-family:var(--font-display);font-size:clamp(30px,3.8vw,46px);margin:16px 0 0;color:var(--aptos-navy);font-weight:800;font-style:italic}
-.hero h1 em{font-family:var(--font);font-style:normal;display:block;font-size:clamp(36px,5.4vw,66px);font-weight:800;margin-top:10px;line-height:1.06;color:var(--aptos-magenta)}
+.hero h1{font-family:var(--font);font-size:clamp(38px,5.6vw,68px);margin:14px 0 0;color:var(--text-dark);font-weight:800;font-style:normal;line-height:1.03;letter-spacing:-.015em}
+.hero h1 em{font-family:var(--font);font-style:normal;display:block;font-size:clamp(19px,2.5vw,28px);font-weight:600;margin-top:16px;line-height:1.22;color:var(--aptos-blue);letter-spacing:0}
 .hero-sub{font-size:clamp(17px,2.4vw,21px);color:var(--ink-soft);margin:22px 0 34px;max-width:30em;font-weight:300}
 .hero-sub b{color:var(--aptos-navy);font-weight:600}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
@@ -232,22 +237,6 @@ a,button{touch-action:manipulation}
 .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
 .section-head h2{font-size:clamp(30px,4.4vw,46px);margin:16px 0 0}
 .section-head p{font-size:clamp(16px,2vw,19px);color:var(--ink-soft);margin-top:18px;font-weight:300}
-.alt{background:var(--bg-alt)}
-.rose-band{background:var(--aptos-magenta);color:var(--aptos-offwhite)}
-.blue-band{background:var(--aptos-blue);color:var(--aptos-offwhite)}
-.rose-band .section-head h2,
-.rose-band .section-head p,
-.rose-band .eyebrow,
-.blue-band .section-head h2,
-.blue-band .section-head p,
-.blue-band .eyebrow{color:var(--aptos-offwhite)}
-.rose-band .eyebrow::before,
-.blue-band .eyebrow::before{background:var(--aptos-offwhite)}
-.rose-band .grad-text,
-.blue-band .grad-text{color:var(--aptos-offwhite)}
-.blue-band .results h2,
-.blue-band .results p,
-.blue-band .certs h4{color:var(--aptos-offwhite)!important}
 
 /* ---- Dobra 2: DNA tecnológico ---- */
 .dna{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -262,7 +251,7 @@ a,button{touch-action:manipulation}
 .stat .num{font-size:42px;font-weight:800;line-height:1}
 .stat .num.grad-text{font-family:var(--font);font-style:normal;color:var(--aptos-magenta)}
 .stat .lab{font-size:13.5px;color:var(--ink-soft);margin-top:8px;font-weight:500}
-.synergy-section{background:linear-gradient(180deg,var(--aptos-offwhite),rgba(188,222,255,.5));overflow:hidden}
+.synergy-section{background:var(--aptos-offwhite);overflow:hidden}
 .synergy-layout{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
 .synergy-stage{position:relative;min-height:0;overflow:visible;padding:0}
 .journey-line{display:none}
@@ -308,7 +297,7 @@ a,button{touch-action:manipulation}
 .journey-card:nth-child(3) .journey-dot{background:var(--aptos-magenta);box-shadow:0 0 0 10px rgba(243,148,163,.16)}
 .journey-support{position:relative;z-index:2;margin:34px auto 0;max-width:760px;text-align:center;color:var(--text-dark);font-size:18px;font-weight:400}
 .synergy-copy-main{text-align:center;max-width:860px;margin:0 auto}
-.synergy-copy-main h2{font-family:var(--font);font-size:clamp(36px,4.4vw,58px);color:var(--aptos-blue);margin:14px 0 0}
+.synergy-copy-main h2{font-family:var(--font);font-size:clamp(36px,4.4vw,58px);color:var(--text-dark);margin:14px 0 0}
 .synergy-copy-main p{font-size:18px;color:var(--text-dark);font-weight:400;margin:18px auto 0;max-width:760px}
 .synergy-points{list-style:none;display:grid;grid-template-columns:1fr;gap:12px;margin-top:26px}
 .synergy-points li{display:flex;align-items:flex-start;gap:14px;padding:18px 18px;border-radius:var(--radius-sm);border:1px solid rgba(0,125,255,.16);background:rgba(244,244,244,.66);color:var(--text-dark);font-weight:600;box-shadow:var(--shadow-soft)}
@@ -316,9 +305,9 @@ a,button{touch-action:manipulation}
 .dot{width:11px;height:11px;border-radius:3px}
 
 /* ---- Dobra 3: bioengenharia ---- */
-.bio-section{position:relative;overflow:hidden}
-.bio-particles{position:absolute;inset:0;pointer-events:none;opacity:.72}
-.bio-particles span{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--aptos-offwhite);box-shadow:0 0 28px rgba(244,244,244,.45);animation:particleFloat 7s ease-in-out infinite}
+.bio-section{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--aptos-offwhite) 0%,rgba(248,197,205,.16) 100%)}
+.bio-particles{position:absolute;inset:0;pointer-events:none;opacity:.6}
+.bio-particles span{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--aptos-pink);box-shadow:0 0 26px rgba(243,148,163,.4);animation:particleFloat 7s ease-in-out infinite}
 .bio-particles span:nth-child(1){left:8%;top:18%;animation-delay:0s}
 .bio-particles span:nth-child(2){left:18%;top:78%;animation-delay:1.4s}
 .bio-particles span:nth-child(3){left:42%;top:12%;animation-delay:2.8s}
@@ -336,22 +325,23 @@ a,button{touch-action:manipulation}
 .bio-section .wrap{position:relative;z-index:1}
 .eng-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .eng-card{
-  background:rgba(244,244,244,.14);border:1px solid rgba(244,244,244,.42);border-radius:var(--radius);
-  padding:32px 28px;box-shadow:none;color:var(--aptos-offwhite);
+  position:relative;background:#fff;border:1px solid rgba(0,125,255,.12);border-radius:var(--radius);
+  padding:34px 28px;box-shadow:var(--shadow-soft);color:var(--text-dark);overflow:hidden;
   transition:transform .3s ease,box-shadow .3s ease;
 }
-.eng-card:hover{transform:translateY(-6px);box-shadow:0 18px 50px -28px rgba(244,244,244,.7)}
-.eng-icon{width:54px;height:54px;border-radius:14px;background:transparent;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.eng-icon svg{width:28px;height:28px;stroke:var(--aptos-offwhite);fill:none;stroke-width:1.8}
+.eng-card::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--grad-aptos-soft)}
+.eng-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.eng-icon{width:54px;height:54px;border-radius:14px;background:rgba(0,125,255,.07);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.eng-icon svg{width:28px;height:28px;stroke:var(--aptos-blue);fill:none;stroke-width:1.8}
 @keyframes iconDraw{
   0%,100%{transform:translateY(0) scale(1);opacity:.82}
   50%{transform:translateY(-4px) scale(1.08);opacity:1}
 }
-.eng-card h3{font-size:20px;margin-bottom:10px;color:var(--aptos-offwhite)}
-.eng-card p{font-size:15.5px;color:var(--aptos-offwhite);font-weight:400}
-.training-diffs{list-style:none;margin:34px auto 0;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;color:var(--aptos-offwhite)}
-.training-diffs li{display:flex;align-items:center;gap:9px;padding:11px 16px;border-radius:999px;border:1px solid rgba(244,244,244,.5);background:rgba(244,244,244,.12);font-weight:700;font-size:14px}
-.training-diffs li::before{content:"✓";width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--aptos-offwhite);color:var(--aptos-magenta);font-size:13px;font-weight:900}
+.eng-card h3{font-size:20px;margin-bottom:10px;color:var(--text-dark)}
+.eng-card p{font-size:15.5px;color:var(--ink-soft);font-weight:400}
+.training-diffs{list-style:none;margin:34px auto 0;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;color:var(--aptos-blue)}
+.training-diffs li{display:flex;align-items:center;gap:9px;padding:11px 16px;border-radius:999px;border:1px solid rgba(0,125,255,.22);background:#fff;font-weight:700;font-size:14px;box-shadow:var(--shadow-soft)}
+.training-diffs li::before{content:"✓";width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--aptos-blue);color:#fff;font-size:13px;font-weight:900}
 
 /* ---- Ficha técnica / SKUs ---- */
 .sku-group-label{
@@ -359,10 +349,10 @@ a,button{touch-action:manipulation}
   color:var(--aptos-offwhite);background:var(--grad-aptos-soft);padding:7px 16px;border-radius:999px;margin:0 0 22px;
 }
 .line-showcase{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:stretch;margin-bottom:28px}
-.line-product{min-height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(135deg,rgba(188,222,255,.42),rgba(248,197,205,.28));border-radius:var(--radius);padding:28px;border:1px solid var(--line);box-shadow:var(--shadow-soft)}
-.line-product img{width:min(100%,620px);filter:drop-shadow(0 34px 32px rgba(0,125,255,.16));transition:opacity .22s ease,transform .22s ease}
+.line-product{min-height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(150deg,#053a63 0%,#007dff 100%);border-radius:var(--radius);padding:28px;border:1px solid rgba(0,125,255,.3);box-shadow:var(--shadow)}
+.line-product img{width:min(100%,620px);filter:drop-shadow(0 34px 38px rgba(0,30,60,.4));transition:opacity .22s ease,transform .22s ease}
 .line-product img.switching{opacity:.18;transform:translateY(8px) scale(.98)}
-.line-product-label{font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--aptos-blue)}
+.line-product-label{font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,244,244,.92)}
 .line-detail{border-radius:var(--radius);background:var(--aptos-offwhite);border:1px solid var(--line);box-shadow:var(--shadow-soft);padding:30px;display:flex;flex-direction:column;justify-content:center}
 .line-detail .name{font-size:clamp(30px,4vw,44px);font-weight:900;color:var(--aptos-blue);line-height:1}
 .line-detail .method{font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--aptos-magenta);margin-top:10px}
@@ -397,18 +387,17 @@ a,button{touch-action:manipulation}
 .ba-cell img{width:100%;height:100%;object-fit:cover}
 .ba-cell img.result-png{object-fit:cover}
 .ba-cell .tag{display:none}
-.ba-tabs{display:flex;gap:8px;padding:12px;background:var(--aptos-offwhite)}
-.ba-tabs.single{display:none}
-.ba-tab{flex:1;border:1px solid var(--line);background:var(--aptos-offwhite);color:var(--aptos-blue);border-radius:999px;padding:10px 12px;font-family:inherit;font-weight:800;cursor:pointer}
+.ba-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px;background:var(--aptos-offwhite)}
+.ba-tab{border:1px solid var(--line);background:var(--aptos-offwhite);color:var(--aptos-blue);border-radius:999px;padding:10px 12px;font-family:inherit;font-weight:800;cursor:pointer}
 .ba-tab.active{background:var(--aptos-blue);color:var(--aptos-offwhite);border-color:var(--aptos-blue)}
 .certs{margin-top:36px}
 .certs h4{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px}
-.cert-assets{display:grid;gap:12px;margin-top:12px}
+.cert-assets{display:grid;gap:20px;margin-top:4px}
 .cert-group{
-  color:var(--aptos-offwhite);
+  color:var(--text-dark);
 }
-.cert-group strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;color:var(--aptos-offwhite)}
-.cert-image{display:block;width:64%;height:auto;max-height:70px;object-fit:contain;object-position:left center;filter:drop-shadow(0 14px 22px rgba(0,0,0,.08))}
+.cert-group strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;color:var(--ink-soft)}
+.cert-image{display:block;width:64%;height:auto;max-height:70px;object-fit:contain;object-position:left center}
 .cert-image.anvisa{max-width:46%;max-height:56px}
 
 /* ---- Dobra 5: prova + CTA ---- */
@@ -439,7 +428,7 @@ a,button{touch-action:manipulation}
 /* ============================================================
    FORM — #contato
    ============================================================ */
-.contact{background:linear-gradient(180deg,var(--aptos-offwhite),rgba(188,222,255,.5));color:var(--aptos-blue)}
+.contact{background:var(--aptos-offwhite);color:var(--aptos-blue)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:stretch}
 .contact-copy{display:flex;flex-direction:column;justify-content:center}
 .contact-copy h2{font-size:clamp(28px,4vw,42px)}
@@ -448,7 +437,7 @@ a,button{touch-action:manipulation}
 .benefits{list-style:none;margin-top:30px;display:grid;gap:16px}
 .benefits li{display:flex;gap:13px;font-size:16px;font-weight:500}
 .benefits svg{flex:none;width:24px;height:24px;stroke:var(--aptos-blue);fill:none;stroke-width:2;margin-top:1px}
-.form-card{background:var(--aptos-blue-baby);border:1px solid rgba(0,125,255,.24);border-radius:22px;padding:34px;box-shadow:var(--shadow);color:var(--aptos-blue)}
+.form-card{background:#fff;border:1px solid rgba(0,125,255,.14);border-radius:22px;padding:34px;box-shadow:0 30px 70px -34px rgba(0,125,255,.42);color:var(--aptos-blue)}
 .form-card h3{font-size:23px;margin-bottom:6px}
 .form-card .lead{font-size:14.5px;color:var(--aptos-blue);opacity:.82;margin-bottom:24px}
 .field{margin-bottom:16px}
@@ -499,9 +488,9 @@ a,button{touch-action:manipulation}
 .reveal.d2{transition-delay:.16s}
 .reveal.d3{transition-delay:.24s}
 @media(prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none;transition:none}
-  .proof-product img,.bio-particles span,.eng-icon svg{animation:none!important}
-  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .bio-particles{display:none}
 }
 
 /* ============================================================
@@ -544,6 +533,9 @@ a,button{touch-action:manipulation}
   body{font-size:16px}
   .wrap{padding:0 18px}
   .hero{min-height:92vh;background-position:68% center;padding:130px 0 64px}
+  .hero h1{font-size:clamp(30px,8.6vw,40px);overflow-wrap:break-word}
+  .hero h1 em{font-size:clamp(16px,4.6vw,20px)}
+  .hero-copy{max-width:100%}
   .hero-bg{
     background:
       linear-gradient(180deg,rgba(244,244,244,.98) 0%,rgba(244,244,244,.93) 50%,rgba(244,244,244,.76) 100%);
@@ -589,7 +581,7 @@ a,button{touch-action:manipulation}
   <div class="hero-bg"></div>
   <div class="wrap">
     <div class="hero-copy reveal">
-      <h1>Threads Lifting Method<em class="grad-text">Lifting de Colágeno &amp; Linhas de Colágeno</em></h1>
+      <h1>Threads Lifting Method<em>Lifting de Colágeno &amp; Linhas de Colágeno</em></h1>
       <p class="hero-sub">A nova era da regeneração com fios de <b>reposicionamento</b>, <b>tração</b> e <b>bioestímulo</b>. Receba informações sobre a agenda de Certificação APTOS e leve o método para a sua prática clínica.</p>
       <div class="hero-actions">
         <a href="#contato" class="btn btn-primary">Quero ser certificado APTOS</a>
@@ -615,12 +607,12 @@ a,button{touch-action:manipulation}
       </p>
 
       <div class="dna-stats">
-        <div class="stat"><div class="num grad-text"><span data-count="2">0</span> anos</div><div class="lab">de efeito lifting duradouro</div></div>
-        <div class="stat"><div class="num grad-text"><span data-count="100">0</span>%</div><div class="lab">absorvível e biocompatível</div></div>
+        <div class="stat"><div class="num grad-text">2 anos</div><div class="lab">de efeito lifting duradouro</div></div>
+        <div class="stat"><div class="num grad-text">100%</div><div class="lab">absorvível e biocompatível</div></div>
       </div>
     </div>
     <div class="dna-figure reveal d1">
-      <img src="assets/images/persona.png" alt="Mulher com pele firme e saudável, resultado do método APTOS" width="1600" height="1600" loading="lazy" decoding="async" />
+      <img src="assets/images/persona.png" alt="Persona APTOS" width="640" height="640" loading="lazy" decoding="async" />
     </div>
   </div>
 </section>
@@ -668,7 +660,7 @@ a,button{touch-action:manipulation}
 </section>
 
 <!-- ============================================================ Dobra 3 · BIOENGENHARIA -->
-<section class="section rose-band bio-section">
+<section class="section bio-section">
   <div class="bio-particles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   <div class="wrap">
     <div class="section-head center reveal">
@@ -739,14 +731,14 @@ a,button{touch-action:manipulation}
 </section>
 
 <!-- ============================================================ Dobra 4 · RESULTADOS + CERTIFICADOS -->
-<section class="section blue-band" id="resultados">
+<section class="section" id="resultados">
   <div class="wrap results">
     <div class="result-panel reveal">
       <div class="ba">
         <div class="ba-stage">
-          <div class="ba-cell active" data-ba-panel="antes"><span class="tag">Antes</span><img src="assets/images/ba-antes.jpg" alt="Antes" onerror="this.style.display='none'"></div>
-          <div class="ba-cell" data-ba-panel="depois"><span class="tag">Depois</span><img src="assets/images/ba-depois.jpg" alt="Depois" onerror="this.style.display='none'"></div>
-          <div class="ba-cell" data-ba-panel="30dias"><span class="tag">30 dias</span><img class="result-png" src="assets/images/ba-30dias.png" alt="30 dias depois" onerror="this.style.display='none'"></div>
+          <div class="ba-cell active" data-ba-panel="antes"><span class="tag">Antes</span><img src="assets/images/ba-antes.jpg" alt="Antes" loading="lazy" decoding="async"></div>
+          <div class="ba-cell" data-ba-panel="depois"><span class="tag">Depois</span><img src="assets/images/ba-depois.jpg" alt="Depois" loading="lazy" decoding="async"></div>
+          <div class="ba-cell" data-ba-panel="30dias"><span class="tag">30 dias</span><img class="result-png" src="assets/images/ba-30dias.png" alt="30 dias depois" loading="lazy" decoding="async"></div>
         </div>
         <div class="ba-tabs" aria-label="Comparativo de resultados">
           <button class="ba-tab active" type="button" data-ba-target="antes">Antes</button>
@@ -754,7 +746,7 @@ a,button{touch-action:manipulation}
           <button class="ba-tab" type="button" data-ba-target="30dias">30 dias</button>
         </div>
       </div>
-      <p style="font-size:13px;color:var(--aptos-offwhite);margin-top:12px;text-align:center">Imagens ilustrativas · resultados podem variar conforme avaliação clínica.</p>
+      <p style="font-size:13px;color:var(--ink-soft);margin-top:12px;text-align:center">Imagens ilustrativas · resultados podem variar conforme avaliação clínica.</p>
     </div>
     <div class="result-panel reveal d1">
       <span class="eyebrow">Resultados comprovados</span>
@@ -766,11 +758,11 @@ a,button{touch-action:manipulation}
         <div class="cert-assets" aria-label="Certificados APTOS">
           <div class="cert-group">
             <strong>Certificados internacionais</strong>
-            <img class="cert-image" src="assets/images/certificados-internacionais.png?v=20260609-3" alt="Certificações internacionais MDSAP, FDA, ISO e CE" loading="lazy" decoding="async">
+            <img class="cert-image" src="assets/images/certificados-internacionais.png?v=20260611" alt="Certificações internacionais MDSAP, FDA, ISO e CE" loading="lazy" decoding="async">
           </div>
           <div class="cert-group">
             <strong>Certificado nacional</strong>
-            <img class="cert-image anvisa" src="assets/images/certificado-anvisa.png?v=20260609-2" alt="Certificação ANVISA" loading="lazy" decoding="async">
+            <img class="cert-image anvisa" src="assets/images/certificado-anvisa.png?v=20260611" alt="Certificação ANVISA" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -798,7 +790,7 @@ a,button{touch-action:manipulation}
       </div>
     </div>
     <div class="proof-product">
-      <img src="assets/images/APTOS CX JUNTAS.png" alt="Caixas da linha de fios APTOS" loading="lazy" decoding="async" />
+      <img src="assets/images/APTOS CX JUNTAS.png" alt="SKUs APTOS" loading="lazy" decoding="async" />
       <a href="#contato" class="btn btn-primary proof-product-cta">Quero levar APTOS para minha clínica</a>
     </div>
   </div>
@@ -897,7 +889,7 @@ a,button{touch-action:manipulation}
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <img class="logo-aptos" src="assets/images/logo_aptos.png" alt="APTOS" />
+        <img class="logo-aptos" src="assets/images/logo_aptos.png" alt="APTOS" loading="lazy" decoding="async" />
         <p>Threads Lifting Method. A nova era da regeneração com fios de reposicionamento, tração e bioestímulo. Distribuição Ilikia.</p>
       </div>
       <div>
@@ -928,7 +920,7 @@ a,button{touch-action:manipulation}
     </ol>
     <div class="footer-bottom">
       <span>© <span id="year"></span> APTOS · Ilikia. Todos os direitos reservados.</span>
-      <img class="logo-ilikia" src="assets/images/logo_ilikia.png" alt="Ilikia" />
+      <img class="logo-ilikia" src="assets/images/logo_ilikia.png" alt="Ilikia" loading="lazy" decoding="async" />
     </div>
   </div>
 </footer>
@@ -949,57 +941,29 @@ onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 /* ---- mobile menu ---- */
 const toggle = document.getElementById('navToggle');
 const links  = document.getElementById('navLinks');
-toggle.addEventListener('click', () => {
-  const open = links.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', open);
+function setMenu(open){
+  links.classList.toggle('open', open);
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-});
-links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  links.classList.remove('open');
-  toggle.setAttribute('aria-expanded', 'false');
-}));
-
-/* ---- reduced motion: pausa o vídeo decorativo do hero ---- */
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  const heroVideo = document.querySelector('.hero-video');
-  if (heroVideo) heroVideo.pause();
 }
+toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')));
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+/* ---- reduced motion: pausa o vídeo do hero ---- */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+function applyReducedMotion(mq){
+  const video = document.querySelector('.hero-video');
+  if (!video) return;
+  if (mq.matches){ video.removeAttribute('autoplay'); video.pause(); }
+}
+applyReducedMotion(reduceMotion);
+reduceMotion.addEventListener('change', applyReducedMotion);
 
 /* ---- reveal on scroll ---- */
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-/* ---- contadores do DNA tecnológico ---- */
-function animateCount(el){
-  const target = Number(el.dataset.count || 0);
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion){
-    el.textContent = target;
-    return;
-  }
-
-  const duration = 1100;
-  const start = performance.now();
-  const tick = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(target * eased);
-    if (progress < 1) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-}
-
-const countObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.querySelectorAll('[data-count]').forEach(animateCount);
-    countObserver.unobserve(entry.target);
-  });
-}, {threshold:.28});
-const dnaSection = document.querySelector('#tecnologia');
-if (dnaSection) countObserver.observe(dnaSection);
 
 /* ---- linha completa: vitrine dinâmica dos produtos ---- */
 const productData = {
@@ -1073,36 +1037,34 @@ productTabs.forEach(tab => {
 });
 setProductPreview('lltmb');
 
-/* ---- resultados: antes / depois / 30 dias ----
-   Só exibe slides cuja imagem carregou; remove tab + painel dos que
-   faltam (ex.: ba-antes/ba-depois ainda não disponíveis). */
+/* ---- resultados: antes / depois / 30 dias (carrossel resiliente) ----
+   Abas cujas imagens não carregam (ex.: ba-antes/ba-depois ainda no
+   SharePoint) são removidas automaticamente; voltam sozinhas quando os
+   arquivos entrarem no repo. */
 let baTargets = ['antes','depois','30dias'];
 let baIndex = 0;
-let baAuto = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let baAuto = true;
 function setBaSlide(target){
   document.querySelectorAll('.ba-tab').forEach(btn => btn.classList.toggle('active', btn.dataset.baTarget === target));
   document.querySelectorAll('.ba-cell').forEach(panel => {
     panel.classList.toggle('active', panel.dataset.baPanel === target);
   });
 }
-function removeBaSlide(key){
-  const cell = document.querySelector(`.ba-cell[data-ba-panel="${key}"]`);
-  const tab  = document.querySelector(`.ba-tab[data-ba-target="${key}"]`);
+function removeBaTarget(target){
+  baTargets = baTargets.filter(t => t !== target);
+  const cell = document.querySelector(`.ba-cell[data-ba-panel="${target}"]`);
+  const tab  = document.querySelector(`.ba-tab[data-ba-target="${target}"]`);
   if (cell) cell.remove();
-  if (tab) tab.remove();
-  baTargets = baTargets.filter(t => t !== key);
+  if (tab)  tab.remove();
   if (!baTargets.length) return;
-  const tabsBar = document.querySelector('.ba-tabs');
-  if (tabsBar && baTargets.length < 2) tabsBar.classList.add('single');
-  if (!document.querySelector('.ba-cell.active')){
-    baIndex = 0;
-    setBaSlide(baTargets[0]);
-  }
+  baIndex = 0;
+  setBaSlide(baTargets[0]);
 }
 document.querySelectorAll('.ba-cell img').forEach(img => {
-  const key = img.closest('.ba-cell').dataset.baPanel;
-  if (img.complete && img.naturalWidth === 0) removeBaSlide(key);
-  else img.addEventListener('error', () => removeBaSlide(key));
+  const target = img.closest('.ba-cell').dataset.baPanel;
+  const fail = () => removeBaTarget(target);
+  if (img.complete && img.naturalWidth === 0) fail();
+  img.addEventListener('error', fail);
 });
 document.querySelectorAll('.ba-tab').forEach(tabBtn => {
   tabBtn.addEventListener('click', () => {
@@ -1112,7 +1074,7 @@ document.querySelectorAll('.ba-tab').forEach(tabBtn => {
   });
 });
 setInterval(() => {
-  if (!baAuto || baTargets.length < 2 || document.hidden) return;
+  if (!baAuto || baTargets.length < 2) return;
   baIndex = (baIndex + 1) % baTargets.length;
   setBaSlide(baTargets[baIndex]);
 }, 3200);
